@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Портфолио</title>
+    <link rel="stylesheet" href="stile.css">
+    <link rel="stylesheet" href="fa/css/all.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <object type="image/svg+xml" data="logo.svg"></object>
+            <label for="toggle-1" class="toggle-menu"><i class="fas fa-bars fa-lg"></i></label>
+            <input type="checkbox" id="toggle-1">
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Главная</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="gallery">
+            <!-- Ряд 1 -->
+            <div class="row">
+                <div class="cell">
+                    <img src="works/pic1.jpg" alt="Проект 1" onclick="openImage(this)">
+                </div>
+                <div class="cell">
+                    <img src="works/pic2.jpg" alt="Проект 2" onclick="openImage(this)">
+                </div>
+            </div>
+            <!-- Ряд 2 -->
+            <div class="row">
+                <div class="cell">
+                    <img src="works/pic3.jpg" alt="Проект 3" onclick="openImage(this)">
+                </div>
+                <div class="cell">
+                    <img src="works/pic4.jpg" alt="Проект 4" onclick="openImage(this)">
+                </div>
+            </div>
+            <!-- Ряд 3 -->
+            <div class="row">
+                <div class="cell">
+                    <img src="works/pic5.jpg" alt="Проект 5" onclick="openImage(this)">
+                </div>
+                <div class="cell">
+                    <img src="works/pic6.jpg" alt="Проект 6" onclick="openImage(this)">
+                </div>
+            </div>
+        </div>
+        <div id="modal" onclick="closeImage(event)">
+            <img id="modal-img" ondragstart="return false;">
+        </div>
+        <script src="script.js"></script>
+    </main>
+</body>
+<footer>
+    <div class="social-media">
+        <a href="https://t.me/wyltnw"><i class="fab fa-telegram"></i></a>
+        <a href="https://discord.gg/cZCRQ5KF"><i class="fab fa-discord"></i></a>
+        <a href="https://vk.com/mlsngr"><i class="fab fa-vk"></i></a>
+    </div>
+</footer>
+</html>
