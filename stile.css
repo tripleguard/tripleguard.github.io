@@ -55,9 +55,9 @@ main {
 }
 
 object {
-    width: 60px;
+    width: 65px;
     /* Задайте желаемую ширину */
-    height: 60px;
+    height: 65px;
     /* Задайте автоматическую высоту для сохранения пропорций */
     float: left;
     margin-left: 50px;
@@ -96,8 +96,6 @@ object {
 .gallery img:last-child {
     margin-right: 0;
 }
-
-
 
 /* Стили для модального окна */
 #modal {
@@ -168,7 +166,7 @@ footer a {
 nav {
     width: auto;
     float: right;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
 nav ul {
@@ -208,18 +206,7 @@ label {
 
 @media only screen and (max-width: 980px) {
     header {
-        padding: 30px 0;
-    }
-
-    input[type=checkbox] {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-        background: none;
-    }
-
-    input[type=checkbox]:focus {
-        background: none;
+        padding: 50px 0;
     }
 
     .animated-text {
@@ -231,7 +218,7 @@ label {
     }
 
     .social-media a i {
-        font-size: 45px;
+        font-size: 70px;
         /* Устанавливает размер значка (иконки) внутри кнопок */
     }
 
@@ -242,8 +229,17 @@ label {
         margin-right: 65px;
     }
 
+    object {
+        width: 100px;
+        /* Задайте желаемую ширину */
+        height: 100px;
+        /* Задайте автоматическую высоту для сохранения пропорций */
+        float: left;
+        margin-left: 50px;
+    }
+
     footer {
-        padding: 15px 0;
+        padding: 50px 0;
         /* Добавил вертикальный отступ для footer */
     }
 
@@ -252,19 +248,10 @@ label {
     }
 
     .toggle-menu {
-        font-size: 30px;
+        font-size: 50px;
         position: relative;
         top: 50%;
         transform: translateY(+50%);
-    }
-
-    #logo svg {
-        width: 70px;
-        /* Задайте желаемую ширину */
-        height: 70px;
-        /* Задайте автоматическую высоту для сохранения пропорций */
-        float: left;
-        margin-left: 50px;
     }
 
     input[type=checkbox]:checked~nav {
@@ -275,11 +262,11 @@ label {
         display: none;
         position: absolute;
         right: 0;
-        top: 49px;
+        top: 50px;
         background-color: #333;
         padding: 0;
         z-index: 99;
-        margin-top: 80px;
+        margin-top: 150px;
     }
 
     nav ul {
@@ -296,7 +283,7 @@ label {
     nav ul li a {
         color: #fff;
         font-size: 30px;
-        padding: 20px 30px;
+        padding: 40px 50px;
         display: block;
     }
 }
@@ -311,7 +298,7 @@ label {
     }
 
     .social-media a i {
-        font-size: 30px;
+        font-size: 50px;
         /* Устанавливает размер значка (иконки) внутри кнопок */
     }
 }
