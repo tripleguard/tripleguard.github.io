@@ -1,0 +1,317 @@
+/* Установка стандартных настроек для страницы */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Основные стили для всей страницы */
+body {
+    background: rgba(190, 147, 197, 0.4);
+    /* Здесь 0.8 определяет уровень прозрачности (от 0 до 1) */
+    background: -webkit-linear-gradient(to right, rgba(123, 198, 204, 0.8), rgba(190, 147, 197, 0.8));
+    background: linear-gradient(to right, rgba(123, 198, 204, 0.8), rgba(190, 147, 197, 0.8));
+    font-family: Lato, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Стили для заголовка в шапке */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1px;
+    position: relative;
+}
+
+/* Основные стили для контента страницы */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 50px;
+    /* Высота footer */
+    flex-grow: 1;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animated-text {
+    font-size: 20px;
+    animation: slideInLeft 1s ease forwards;
+    /* Анимация длится 1 секунду */
+    /* ease - функция времени (можно изменить на другую, если нужно);
+       forwards - оставить элемент в состоянии, когда анимация закончена */
+}
+
+object {
+    width: 60px;
+    /* Задайте желаемую ширину */
+    height: 60px;
+    /* Задайте автоматическую высоту для сохранения пропорций */
+    float: left;
+    margin-left: 50px;
+}
+
+/* Стили для контейнера галереи изображений */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Стили для ряда в галерее */
+.row {
+    display: flex;
+    width: 100%;
+}
+
+/* Стили для ячейки с изображением в галерее */
+.cell {
+    flex: 1;
+    padding: 2px;
+    max-width: calc(50% - 4px);
+}
+
+/* Стили для изображений в галерее */
+.gallery img {
+    width: 370px;
+    height: 300px;
+    /* Измените на нужный вам размер */
+    cursor: pointer;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* Убираем отступ после последнего изображения в ряду */
+.gallery img:last-child {
+    margin-right: 0;
+}
+
+
+
+/* Стили для модального окна */
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили для изображения в модальном окне */
+#modal-img {
+    max-width: 80%;
+    max-height: 80%;
+    cursor: pointer;
+}
+
+/* Стили для подвала страницы */
+footer {
+    position: relative;
+    /* Изменил позиционирование на relative */
+    background-color: #333;
+    color: #fff;
+    padding: 1px 0;
+    /* Добавил вертикальный отступ для footer */
+    text-align: center;
+}
+
+/* Стили для ссылок в подвале */
+footer a {
+    display: inline-flex;
+    /* Используем flex-контейнер */
+    align-items: center;
+    /* Выравнивание по вертикали */
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: background-color 0.2s ease;
+    font-size: 25px;
+    /* Устанавливаем размер иконок и кнопок */
+}
+
+.social-media a:active {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+
+.nav-list a:active {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+
+nav {
+    width: auto;
+    float: right;
+    margin-top: 25px;
+}
+
+nav ul {
+    display: table;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    float: left;
+    list-style-type: none;
+}
+
+nav ul li:last-child {
+    padding-right: 0;
+}
+
+nav ul li a {
+    color: #e4f2ff;
+    font-size: 19px;
+    padding: 7px 19px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #222;
+    text-decoration: none;
+}
+
+input[type=checkbox],
+label {
+    display: none;
+}
+
+
+@media only screen and (max-width: 980px) {
+    header {
+        padding: 30px 0;
+    }
+
+    input[type=checkbox] {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        background: none;
+    }
+
+    input[type=checkbox]:focus {
+        background: none;
+    }
+
+    .animated-text {
+        font-size: 30px;
+    }
+
+    .social-media a {
+        margin: 0 50px;
+    }
+
+    .social-media a i {
+        font-size: 45px;
+        /* Устанавливает размер значка (иконки) внутри кнопок */
+    }
+
+    label {
+        float: right;
+        display: inline-block;
+        cursor: pointer;
+        margin-right: 65px;
+    }
+
+    footer {
+        padding: 15px 0;
+        /* Добавил вертикальный отступ для footer */
+    }
+
+    footer a {
+        font-size: 40px;
+    }
+
+    .toggle-menu {
+        font-size: 30px;
+        position: relative;
+        top: 50%;
+        transform: translateY(+50%);
+    }
+
+    #logo svg {
+        width: 70px;
+        /* Задайте желаемую ширину */
+        height: 70px;
+        /* Задайте автоматическую высоту для сохранения пропорций */
+        float: left;
+        margin-left: 50px;
+    }
+
+    input[type=checkbox]:checked~nav {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 49px;
+        background-color: #333;
+        padding: 0;
+        z-index: 99;
+        margin-top: 80px;
+    }
+
+    nav ul {
+        width: auto;
+    }
+
+    nav ul li {
+        float: none;
+        padding: 0;
+        width: 100%;
+        display: table;
+    }
+
+    nav ul li a {
+        color: #fff;
+        font-size: 30px;
+        padding: 20px 30px;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    label {
+        padding: 5px 0;
+    }
+
+    nav {
+        top: 47px;
+    }
+
+    .social-media a i {
+        font-size: 30px;
+        /* Устанавливает размер значка (иконки) внутри кнопок */
+    }
+}
