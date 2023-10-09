@@ -20,9 +20,8 @@ body {
 /* Стили для заголовка в шапке */
 header {
     background-color: #333;
-    color: white;
-    text-align: center;
     padding: 1px;
+    color: white;
     position: relative;
 }
 
@@ -63,10 +62,21 @@ object {
     margin-left: 50px;
 }
 
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
 /* Стили для контейнера галереи изображений */
 .gallery {
     display: flex;
     flex-wrap: wrap;
+    animation: slideInLeft 1s ease forwards;
 }
 
 /* Стили для ряда в галерее */
@@ -86,7 +96,6 @@ object {
 .gallery img {
     width: 370px;
     height: 300px;
-    /* Измените на нужный вам размер */
     cursor: pointer;
     object-fit: cover;
     margin-bottom: 20px;
@@ -120,20 +129,16 @@ object {
 /* Стили для подвала страницы */
 footer {
     position: relative;
-    /* Изменил позиционирование на relative */
     background-color: #333;
     color: #fff;
     padding: 1px 0;
-    /* Добавил вертикальный отступ для footer */
     text-align: center;
 }
 
 /* Стили для ссылок в подвале */
 footer a {
     display: inline-flex;
-    /* Используем flex-контейнер */
     align-items: center;
-    /* Выравнивание по вертикали */
     background-color: #333;
     color: #fff;
     padding: 15px;
@@ -142,7 +147,6 @@ footer a {
     margin-left: 20px;
     transition: background-color 0.2s ease;
     font-size: 25px;
-    /* Устанавливаем размер иконок и кнопок */
 }
 
 .social-media a:active {
@@ -210,7 +214,7 @@ label {
     }
 
     .animated-text {
-        font-size: 35px;
+        font-size: 30px;
     }
 
     .social-media a {
@@ -231,16 +235,13 @@ label {
 
     object {
         width: 100px;
-        /* Задайте желаемую ширину */
         height: 100px;
-        /* Задайте автоматическую высоту для сохранения пропорций */
         float: left;
         margin-left: 50px;
     }
 
     footer {
         padding: 50px 0;
-        /* Добавил вертикальный отступ для footer */
     }
 
     footer a {
@@ -299,6 +300,5 @@ label {
 
     .social-media a i {
         font-size: 50px;
-        /* Устанавливает размер значка (иконки) внутри кнопок */
     }
 }

@@ -1,21 +1,23 @@
 function openImage(img) {
     const modal = document.getElementById('modal');
     const modalImg = document.getElementById('modal-img');
+
     if (!modal || !modalImg) return;
+
     modal.style.display = 'flex';
     modalImg.src = img.src;
-  
+
     // Скрываем footer при открытии модального окна
     const footer = document.querySelector('footer');
     footer.style.display = 'none';
-  
+
     // Добавляем обработчик события для нажатия клавиши Esc
     document.addEventListener('keydown', function (event) {
         if (event.key === 'Escape') {
             closeImage();
         }
     });
-  
+
     // Блокируем скроллинг при открытом модальном окне
     document.body.style.overflow = 'hidden';
 }
@@ -38,3 +40,5 @@ document.getElementById('modal').addEventListener('click', function (event) {
         closeImage();
     }
 });
+
+
