@@ -13,6 +13,7 @@ fetch('https://api.github.com/repos/tripleguard/tripleguard.github.io/contents/w
                 const imgElement = document.createElement('img');
                 imgElement.src = imageURL;
                 imgElement.alt = altText;
+                imgElement.loading = 'lazy';
                 imgElement.onclick = function () {
                     openImage(this);
                 };
