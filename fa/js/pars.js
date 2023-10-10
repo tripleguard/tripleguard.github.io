@@ -7,13 +7,12 @@ fetch('https://api.github.com/repos/tripleguard/tripleguard.github.io/contents/w
         rowElement.className = 'row';
 
         data.forEach(file => {
-            if (file.type === 'file' && file.name.endsWith('.jpg')) {
+            if (file.type === 'file' && (file.name.endsWith('.jpg') || file.name.endsWith('.png'))) {
                 const imageURL = file.download_url;
                 const altText = file.name;
                 const imgElement = document.createElement('img');
                 imgElement.src = imageURL;
                 imgElement.alt = altText;
-                imgElement.loading = 'lazy';
                 imgElement.onclick = function () {
                     openImage(this);
                 };
