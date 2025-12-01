@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 235 16% 15%;
+    --foreground: 230 50% 95%;
+    --card: 235 16% 20%;
+    --card-foreground: 230 50% 95%;
+    --popover: 235 16% 15%;
+    --popover-foreground: 230 50% 95%;
+    --primary: 231 48% 77%;
+    --primary-foreground: 235 16% 10%;
+    --secondary: 235 16% 25%;
+    --secondary-foreground: 230 50% 95%;
+    --muted: 235 16% 25%;
+    --muted-foreground: 230 20% 70%;
+    --accent: 234 63% 40%;
+    --accent-foreground: 230 50% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 235 16% 25%;
+    --input: 235 16% 25%;
+    --ring: 231 48% 77%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: currentColor }
+}
+
+@keyframes chat-enter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes chat-exit {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-20px); }
+}
+
+.animate-chat-enter {
+  animation: chat-enter 0.5s ease-out forwards;
+}
+
+.animate-chat-exit {
+  animation: chat-exit 0.5s ease-in forwards;
+}
+
+.animate-blink-caret:not(:empty)::after {
+  content: '';
+  animation: blink-caret 1.25s step-end infinite;
+}
