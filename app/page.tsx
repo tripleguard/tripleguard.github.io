@@ -209,7 +209,7 @@ export default function Home() {
                 <div className="mt-6 md:mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-3 md:gap-4">
                   <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all duration-300 hover:scale-105 w-full sm:w-auto">
                     <Download className="mr-2 h-5 w-5" />
-                      <Link href="https://github.com/tripleguard/agent_vera/releases/download/v1.0.0/Vera.zip">
+                      <Link href="https://github.com/tripleguard/agent_vera/releases/download/v1.0.1/Vera.zip">
                       Скачать
                       </Link>
                   </Button>
