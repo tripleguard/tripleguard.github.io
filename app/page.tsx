@@ -26,6 +26,7 @@ import Footer from '@/components/footer';
 
 const repoUrl = 'https://github.com/tripleguard/Vera';
 const releasesUrl = `${repoUrl}/releases`;
+const docsUrl = 'https://docs.agentvera.ru/';
 const cloneCommand = 'git clone https://github.com/tripleguard/Vera.git';
 
 const capabilities = [
@@ -122,7 +123,7 @@ export default function Home() {
                   <Github className="h-4 w-4" />
                   GitHub
                 </Link>
-                <Link className="button button-ghost" href="/docs">
+                <Link className="button button-ghost" href={docsUrl}>
                   Документация
                   <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -226,7 +227,7 @@ export default function Home() {
               <Link className="button button-primary" href={releasesUrl}>
                 Скачать релиз
               </Link>
-              <Link className="button" href="/docs">
+              <Link className="button" href={docsUrl}>
                 Открыть документацию
               </Link>
             </div>

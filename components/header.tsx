@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { Github, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
+const docsUrl = 'https://docs.agentvera.ru/';
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -28,7 +30,7 @@ export default function Header() {
         <nav className="hidden items-center gap-7 md:flex">
           <Link href="/#features">Возможности</Link>
           <Link href="/#local">Приватность</Link>
-          <Link href="/docs">Документация</Link>
+          <Link href={docsUrl}>Документация</Link>
           <Link className="header-github" href="https://github.com/tripleguard/Vera" target="_blank">
             <Github className="h-4 w-4" />
             GitHub
@@ -46,7 +48,7 @@ export default function Header() {
         <nav className="mobile-nav md:hidden">
           <Link href="/#features" onClick={() => setOpen(false)}>Возможности</Link>
           <Link href="/#local" onClick={() => setOpen(false)}>Приватность</Link>
-          <Link href="/docs" onClick={() => setOpen(false)}>Документация</Link>
+          <Link href={docsUrl} onClick={() => setOpen(false)}>Документация</Link>
           <Link href="https://github.com/tripleguard/Vera" target="_blank">GitHub</Link>
         </nav>
       )}
