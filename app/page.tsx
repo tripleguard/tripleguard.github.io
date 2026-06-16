@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -80,10 +80,40 @@ const capabilities = [
     title: 'Мультимодальность',
     text: 'Изображения и скриншоты можно отправлять вместе с текстом для анализа локальной vision-моделью.',
   },
+  {
+    icon: CalendarClock,
+    title: 'Визуальное расписание',
+    text: 'Таймеры и периодические задачи видны в интерфейсе, их можно создавать, отключать и удалять.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Надёжность',
+    text: 'Автоперезапуск backend, экран готовности агента и уведомления о сбоях прямо в чате.',
+  },
 ];
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const targets = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        }
+      },
+      { rootMargin: '0px 0px -12% 0px', threshold: 0.16 },
+    );
+
+    targets.forEach((target) => observer.observe(target));
+    return () => observer.disconnect();
+  }, []);
 
   async function handleCopy() {
     await navigator.clipboard.writeText(cloneCommand);
@@ -101,6 +131,7 @@ export default function Home() {
           <div className="container relative z-10 mx-auto px-5 py-20">
             <div className="mx-auto max-w-5xl text-center">
               <div className="hero-group animate-fade-up">
+                <p className="hero-motto">veritas localis</p>
                 <h1 className="mx-auto max-w-4xl text-4xl font-bold leading-[1.05] tracking-[-0.055em] sm:text-6xl lg:text-7xl">
                   Ваш компьютер.
                   <br />
@@ -133,7 +164,7 @@ export default function Home() {
                 <span>Windows 10/11 x64</span>
                 <span>Python 3.10+</span>
                 <span>Node.js 20.19+</span>
-                <span>52 теста</span>
+                <span>76 тестов</span>
               </div>
             </div>
           </div>
@@ -141,7 +172,7 @@ export default function Home() {
 
         <section id="features" className="section-dark border-b border-border py-24">
           <div className="container mx-auto px-5">
-            <div className="section-heading animate-fade-up-soft">
+            <div className="section-heading reveal-block" data-reveal>
               <div>
                 <p className="section-kicker">[ возможности ]</p>
                 <h2>Один агент. Много способов помочь.</h2>
@@ -151,12 +182,16 @@ export default function Home() {
                 системой в одном desktop-приложении.
               </p>
             </div>
-            <div className="mt-14 grid md:grid-cols-2 xl:grid-cols-3">
+            <div className="features-grid mt-14 grid md:grid-cols-2 xl:grid-cols-3">
               {capabilities.map(({ icon: Icon, title, text }, index) => (
-                <article className="feature-card reveal-card" key={title} style={{ animationDelay: `${index * 70}ms` }}>
+                <article
+                  className="feature-card reveal-block"
+                  data-reveal
+                  key={title}
+                  style={{ transitionDelay: `${index * 45}ms` }}
+                >
                   <div className="mb-8 flex items-start justify-between">
                     <Icon className="h-6 w-6 text-accent" />
-                    <span className="text-xs text-dim">{String(index + 1).padStart(2, '0')}</span>
                   </div>
                   <h3>{title}</h3>
                   <p>{text}</p>
@@ -168,7 +203,7 @@ export default function Home() {
 
         <section id="local" className="border-b border-border py-24">
           <div className="container mx-auto grid gap-14 px-5 lg:grid-cols-2 lg:items-center">
-            <div className="animate-fade-left">
+            <div className="reveal-block" data-reveal>
               <p className="section-kicker">[ локально и под контролем ]</p>
               <h2 className="mt-4 max-w-xl text-3xl font-bold tracking-[-0.04em] sm:text-5xl">
                 Локальная по умолчанию. Подключаемая, когда нужно.
@@ -179,7 +214,7 @@ export default function Home() {
                 внешнего LLM-сервера.
               </p>
             </div>
-            <div className="architecture animate-fade-right">
+            <div className="architecture reveal-block" data-reveal>
               <div className="architecture-node node-main">
                 <Sparkles className="h-5 w-5" />
                 Vera Agent
@@ -200,14 +235,14 @@ export default function Home() {
 
         <section id="start" className="section-dark py-24">
           <div className="container mx-auto px-5 text-center">
-            <div className="animate-fade-up-soft">
+            <div className="reveal-block" data-reveal>
               <p className="section-kicker">[ начать работу ]</p>
               <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-bold tracking-[-0.04em] sm:text-5xl">
                 Vera открыта, бесплатна и готова жить на вашем компьютере.
               </h2>
             </div>
 
-            <div className="code-line mx-auto mt-10 max-w-3xl animate-fade-up-delayed">
+            <div className="code-line mx-auto mt-10 max-w-3xl reveal-block" data-reveal>
               <div className="clone-command">
                 <span className="text-violet">$</span>
                 <span className="clone-command-text">{cloneCommand}</span>
