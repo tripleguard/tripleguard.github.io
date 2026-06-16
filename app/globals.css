@@ -199,10 +199,27 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 42%, rgb(124 231 236 / 0.09), transparent 26%),
-    linear-gradient(120deg, transparent 18%, rgb(124 231 236 / 0.045) 36%, transparent 58%);
-  opacity: 0.72;
-  animation: hero-breathe 7s ease-in-out infinite;
+    radial-gradient(circle at 22% 72%, rgb(194 156 255 / 0.22), transparent 30%),
+    radial-gradient(circle at 72% 30%, rgb(124 231 236 / 0.2), transparent 28%),
+    radial-gradient(circle at 48% 44%, rgb(124 231 236 / 0.12), transparent 22%),
+    linear-gradient(120deg, transparent 12%, rgb(124 231 236 / 0.08) 38%, transparent 64%);
+  background-size: 120% 120%, 118% 118%, 100% 100%, 160% 160%;
+  opacity: 0.78;
+  filter: saturate(1.15);
+  animation: hero-gradient-flow 12s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.hero-grid::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 40% 50%, transparent 0 16%, rgb(124 231 236 / 0.06) 17%, transparent 23%),
+    conic-gradient(from 120deg at 50% 50%, transparent, rgb(194 156 255 / 0.08), transparent, rgb(124 231 236 / 0.08), transparent);
+  opacity: 0.38;
+  filter: blur(38px);
+  animation: hero-gradient-spin 18s linear infinite;
   pointer-events: none;
 }
 
@@ -216,12 +233,12 @@
 .hero-aurora {
   inset: -30% -12%;
   background:
-    radial-gradient(ellipse at 28% 62%, rgb(194 156 255 / 0.12), transparent 34%),
-    radial-gradient(ellipse at 72% 36%, rgb(124 231 236 / 0.12), transparent 32%),
-    conic-gradient(from 180deg at 50% 50%, transparent, rgb(124 231 236 / 0.055), transparent, rgb(194 156 255 / 0.05), transparent);
-  filter: blur(58px);
-  opacity: 0.58;
-  animation: aurora-drift 14s ease-in-out infinite alternate;
+    radial-gradient(ellipse at 18% 62%, rgb(194 156 255 / 0.2), transparent 34%),
+    radial-gradient(ellipse at 82% 36%, rgb(124 231 236 / 0.2), transparent 32%),
+    radial-gradient(ellipse at 50% 72%, rgb(113 230 173 / 0.1), transparent 30%);
+  filter: blur(46px);
+  opacity: 0.78;
+  animation: aurora-drift 9s ease-in-out infinite alternate;
 }
 
 .hero-scanline {
@@ -375,23 +392,34 @@
   }
 }
 
-@keyframes hero-breathe {
+@keyframes hero-gradient-flow {
   0%, 100% {
-    opacity: 0.52;
+    background-position: 0% 50%, 100% 40%, 50% 50%, 0% 50%;
+    opacity: 0.62;
     transform: scale(1);
   }
   50% {
-    opacity: 0.86;
-    transform: scale(1.025);
+    background-position: 24% 42%, 72% 58%, 46% 54%, 100% 50%;
+    opacity: 0.9;
+    transform: scale(1.035);
   }
 }
 
 @keyframes aurora-drift {
   from {
-    transform: translate3d(-2%, 1%, 0) rotate(-4deg) scale(1);
+    transform: translate3d(-4%, 2%, 0) rotate(-5deg) scale(1);
   }
   to {
-    transform: translate3d(3%, -2%, 0) rotate(5deg) scale(1.08);
+    transform: translate3d(5%, -3%, 0) rotate(6deg) scale(1.12);
+  }
+}
+
+@keyframes hero-gradient-spin {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.04);
   }
 }
 
@@ -430,6 +458,7 @@
   }
 
   .hero-grid::before,
+  .hero-grid::after,
   .hero-aurora,
   .hero-scanline,
   .hero-pulse-ring {
