@@ -126,6 +126,10 @@ export default function Home() {
       <Header />
       <main>
         <section className="hero-grid relative flex min-h-[92vh] items-center overflow-hidden border-b border-border pt-24">
+          <div className="hero-aurora" aria-hidden="true" />
+          <div className="hero-scanline" aria-hidden="true" />
+          <div className="hero-pulse-ring ring-one" aria-hidden="true" />
+          <div className="hero-pulse-ring ring-two" aria-hidden="true" />
           <div className="orb orb-one" />
           <div className="orb orb-two" />
           <div className="container relative z-10 mx-auto px-5 py-20">
