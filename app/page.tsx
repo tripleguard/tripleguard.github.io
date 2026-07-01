@@ -73,7 +73,7 @@ const capabilities = [
   {
     icon: Globe,
     title: 'Веб и внешние LLM',
-    text: 'Brave Search с fallback на DuckDuckGo, а также подключение Ollama и LM Studio.',
+    text: 'Brave Search с fallback на DuckDuckGo, погода по городу из памяти, а также Ollama и LM Studio.',
   },
   {
     icon: Eye,
@@ -83,12 +83,12 @@ const capabilities = [
   {
     icon: CalendarClock,
     title: 'Визуальное расписание',
-    text: 'Таймеры и периодические задачи видны в интерфейсе, их можно создавать, отключать и удалять.',
+    text: 'Таймеры, периодические задачи, заметки, чек-листы и холст живут рядом в интерфейсе.',
   },
   {
     icon: Sparkles,
     title: 'Надёжность',
-    text: 'Автоперезапуск backend, экран готовности агента и уведомления о сбоях прямо в чате.',
+    text: 'Версия и обновление llama.cpp из GUI, автоперезапуск backend и уведомления о сбоях.',
   },
 ];
 
@@ -168,7 +168,7 @@ export default function Home() {
                 <span>Windows 10/11 x64</span>
                 <span>Python 3.10+</span>
                 <span>Node.js 20.19+</span>
-                <span>76 тестов</span>
+                <span>81 тест</span>
               </div>
             </div>
           </div>
