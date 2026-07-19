@@ -3,14 +3,14 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Vera — локальный голосовой AI-агент',
+    default: 'Vera — локальный голосовой и текстовый AI-агент',
     template: '%s · Vera',
   },
   description:
-    'Локальный голосовой агент для Windows с оффлайн-распознаванием речи, локальной LLM, памятью, tools и удобным GUI.',
+    'Локальный голосовой и текстовый AI-агент для Windows с оффлайн-распознаванием речи, локальной LLM, памятью и системными инструментами.',
   metadataBase: new URL('https://agentvera.ru'),
   openGraph: {
-    title: 'Vera — локальный голосовой AI-агент',
+    title: 'Vera — локальный голосовой и текстовый AI-агент',
     description: 'Слышит, помнит и действует. Ваши данные остаются под вашим контролем.',
     url: 'https://agentvera.ru',
     siteName: 'Vera',
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
       </head>
