@@ -804,6 +804,9 @@
   .stack-row small { width: fit-content; }
   .stack-note { padding: 20px 22px; }
   .start-panel { gap: 42px; border-radius: 22px; }
+  .start-terminal { min-width: 0; }
+  .start-terminal .clone-command { align-items: flex-start; overflow: visible; }
+  .start-terminal .clone-command-text { min-width: 0; white-space: normal; overflow-wrap: anywhere; }
 }
 
 @media (prefers-reduced-motion: reduce) {
