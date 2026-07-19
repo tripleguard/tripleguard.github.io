@@ -13,11 +13,11 @@ import {
   FileText,
   Github,
   Globe,
+  Keyboard,
   Lock,
   Mic,
   Monitor,
   Presentation,
-  Send,
   Sparkles,
   Wrench,
 } from 'lucide-react';
@@ -33,12 +33,12 @@ const capabilities = [
   {
     icon: Mic,
     title: 'Голос и диалог',
-    text: 'Оффлайн-распознавание Sherpa-ONNX, локальный голос Lily и возможность прервать ответ словом «Вера».',
+    text: 'Sherpa-ONNX работает офлайн, Supertonic ставится отдельно, а аудиоустройства меняются без перезапуска.',
   },
   {
     icon: Monitor,
     title: 'Управление Windows',
-    text: 'Запуск приложений, работа с окнами, громкостью, яркостью, музыкой, скриншотами и питанием.',
+    text: 'Запуск приложений, окна, громкость, яркость, музыка и питание, плюс управление виджетом через системный трей.',
   },
   {
     icon: BrainCircuit,
@@ -66,9 +66,9 @@ const capabilities = [
     text: 'Таймеры, напоминания и периодические действия, которыми можно управлять голосом или в GUI.',
   },
   {
-    icon: Send,
-    title: 'Telegram-режим',
-    text: 'Работа через Saved Messages: сообщения, файлы и генерация документов вдали от компьютера.',
+    icon: Keyboard,
+    title: 'Полноценный текстовый режим',
+    text: 'Чат работает без микрофона, STT и Supertonic, а интерфейс отдельно показывает состояние каждого компонента.',
   },
   {
     icon: Globe,
@@ -82,13 +82,13 @@ const capabilities = [
   },
   {
     icon: CalendarClock,
-    title: 'Визуальное расписание',
+    title: 'Продуктивность',
     text: 'Таймеры, периодические задачи, заметки, чек-листы и холст живут рядом в интерфейсе.',
   },
   {
     icon: Sparkles,
     title: 'Надёжность',
-    text: 'Версия и обновление llama.cpp из GUI, автоперезапуск backend и уведомления о сбоях.',
+    text: 'Диагностика LLM, TTS, STT и audio, обновление llama.cpp из GUI, автоперезапуск backend и защищённый IPC.',
   },
 ];
 
@@ -144,8 +144,9 @@ export default function Home() {
                   Ваша Vera.
                 </h1>
                 <p className="mx-auto mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-                  Голосовой AI-агент, который слышит, помнит и действует. Распознавание речи,
-                  языковая модель и синтез голоса работают локально, без обязательного облака.
+                  Голосовой и текстовый AI-агент, который слышит, помнит и действует.
+                  Распознавание речи, языковая модель и синтез голоса могут работать локально,
+                  без обязательного облака.
                 </p>
               </div>
 
@@ -168,7 +169,7 @@ export default function Home() {
                 <span>Windows 10/11 x64</span>
                 <span>Python 3.10+</span>
                 <span>Node.js 20.19+</span>
-                <span>81 тест</span>
+                <span>146 тестов</span>
               </div>
             </div>
           </div>
