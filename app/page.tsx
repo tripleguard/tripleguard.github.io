@@ -7,6 +7,7 @@ import {
   BrainCircuit,
   CalendarClock,
   Check,
+  Cloud,
   Copy,
   Download,
   Eye,
@@ -14,7 +15,6 @@ import {
   Github,
   Globe,
   Keyboard,
-  Lock,
   Mic,
   Monitor,
   Presentation,
@@ -148,7 +148,7 @@ export default function Home() {
           <div className="hero-glow" aria-hidden="true" />
           <div className="container relative z-10 mx-auto grid min-h-[calc(100vh-4rem)] items-center gap-16 px-5 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:py-24">
             <div className="hero-copy animate-fade-up">
-              <p className="hero-motto"><span className="status-dot" /> veritas localis</p>
+              <p className="hero-motto">veritas localis</p>
               <h1>
                 Ваш компьютер.<br />
                 <span>Ваши данные.</span><br />
@@ -228,7 +228,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <p className="product-caption"><span /> Память, голос и инструменты работают вместе</p>
             </div>
           </div>
         </section>
@@ -276,7 +275,7 @@ export default function Home() {
                 Сеть подключается только для явно сетевых задач или выбранного вами внешнего LLM.
               </p>
               <div className="privacy-mark">
-                <Lock className="h-5 w-5" />
+                <Cloud className="h-5 w-5" />
                 <span><strong>0</strong> обязательных облачных сервисов</span>
               </div>
             </div>
@@ -289,10 +288,6 @@ export default function Home() {
                   <small>{mode}</small>
                 </div>
               ))}
-              <div className="stack-note">
-                <span className="status-dot" />
-                Данные остаются под вашим контролем
-              </div>
             </div>
           </div>
         </section>
@@ -311,7 +306,7 @@ export default function Home() {
               </div>
 
               <div className="start-terminal">
-                <div className="terminal-label"><span>PowerShell</span><span>open source</span></div>
+                <div className="terminal-label"><span>PowerShell</span></div>
                 <div className="clone-command">
                   <span className="terminal-prompt">›</span>
                   <span className="clone-command-text">{cloneCommand}</span>
